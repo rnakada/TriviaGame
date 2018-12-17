@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/bodyBackground.jpeg);
+    background-size: cover;
+}
+
+/* START */
+
+#startButton {
+    background-image: url(../images/buttonImage.jpg);
+    background-size: 600px 200px;
+    height: 200px;
+    width: 600px;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    font-size: 50px;
+    color: white;
+    font-weight: bolder;
+    font-family: 'Major Mono Display', monospace;
+    opacity: .7;
+}
+
+#startButton:hover {
+    background-image: url(../images/buttonImage2.jpg);
+    font: 0/0 a;
+}
+
+/* GAME PAGE */
+
+#container {
+    border: 1px solid red;
+    /* background-color: white; */
+    width: 80%;
+    height: auto;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin:auto;
+}
+
+#titleRow {
+    border: 1px solid blue;
+    width: 80%;
+    height: 150px;
+    margin:auto;
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    font-size: 75px;
+    padding-top: 20px;
+    background-color: white;
+    opacity: .5;
+}
+
+#titleRow:hover {
+    font-weight: bolder;
+}
+
+#timerRow {
+    border: 1px solid blue;
+    width: 90%;
+    height: 100px;
+    margin:auto;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 15px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#questionRow {
+    border: 1px solid blue;
+    width: 90%;
+    height: 150px;
+    margin:auto;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 50px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#scoreRow {
+    border: 1px solid blue;
+    width: 90%;
+    height: 100px;
+    margin:auto;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 15px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+#answerRow {
+    border: 1px solid blue;
+    width: 90%;
+    height: 150px;
+    margin:auto;
+    text-align: center;
+    font-size: 30px;
+    padding-top: 50px;
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+
+.answerButton {
+    height: 50px;
+    width: 100px;
+    
+}
