@@ -122,6 +122,11 @@ h3 {
     font-weight: bolder;
 }
 
+#resetButton:hover {
+    color: blue;
+    font-weight: bolder;
+}
+
 #submit-button {
     height: 100px;
     width: 200px;
