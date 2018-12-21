@@ -1,35 +1,74 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|ZCOOL+QingKe+HuangYou" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/reset.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <title></title>
-    </head>
+<html lang="en">
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Major+Mono+Display|ZCOOL+QingKe+HuangYou" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <title></title>
+</head>
+
+<body>
     <div id="intro">
         <div id="titleRow">Texas Hold'em Trivia</div>
         <button id="startButton" type="button">Click here to start!!</button>
-            
-        
-            <div id="container">
-                <div id="timerRow">Time Remaining<br><span id="countDown"></span> </div>
-                <div id="questionRow">Questions</div>
-                <div id="scoreRow">
-                    <div id="wins">wins: 0</div>
-                    <div id="losses">losses: 0</div>
-                </div>
-                <div id="answerRow">
-                        <button id="a" type="button" class="answerButton"></button>
-                        <button id="b" type="button" class="answerButton"></button>
-                        <button id="c" type="button" class="answerButton"></button>
-                        <button id="d" type="button" class="answerButton"></button>
-                </div>
+
+        <div id="container">
+            <div id="clock">30 seconds left<br><span id="countDown"></span> </div>
+            <div id="questionsHere">
+                <form id="display" name="questions" onsubmit="return answers()">
+                    
+                    <h3>What is the highest pair?</h3>
+                    <br>
+                    <input type="radio" name="q1" value="a">QQ
+                    <input type="radio" name="q1" value="b">22
+                    <input type="radio" name="q1" value="c">AA
+                    <input type="radio" name="q1" value="d">88
+                    <p></p>
+                    <br>
+                    <h3>What is the lowest pair?</h3>
+                    <br>
+                    <input type="radio" name="q2" value="a">55
+                    <input type="radio" name="q2" value="b">77
+                    <input type="radio" name="q2" value="c">JJ
+                    <input type="radio" name="q2" value="d">22
+                    <p></p>
+                    <br>
+                    <h3>How many cards are in a poker deck?</h3>
+                    <br>
+                    <input type="radio" name="q3" value="a">52
+                    <input type="radio" name="q3" value="b">54
+                    <input type="radio" name="q3" value="c">50
+                    <input type="radio" name="q3" value="d">48
+                    <p></p>
+                    <br>
+                    <h3>How many cards are dealt to each player in Texas Hold'em?</h3>
+                    <br>
+                    <input type="radio" name="q4" value="a">5
+                    <input type="radio" name="q4" value="b">2
+                    <input type="radio" name="q4" value="c">4
+                    <input type="radio" name="q4" value="d">7
+                    <p></p>
+                    <br>
+                    <h3>What does WSOP stand for?</h3>
+                    <br>
+                    <input type="radio" name="q5" value="a">WorldStoriesOfPoker
+                    <input type="radio" name="q5" value="b">WorldSeasonsOfPoker
+                    <input type="radio" name="q5" value="c">WorldSeriesOfPoker
+                    <input type="radio" name="q5" value="d">WorldSecretsOfPoker
+                    
+                </form>
+                <br>
+                <input type="submit" id="submit-button" value="Submit">
             </div>
+        </div>
+
+        <div id="results"><button type="button" id="resetButton">reset game!</button></div>
+
     </div>
-        <script type="text/javascript" src="assets/javascript/app.js"></script>
-    </body>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+</body>
+
 </html>

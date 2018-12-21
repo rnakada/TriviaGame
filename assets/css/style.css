@@ -7,6 +7,11 @@ body {
     background-size: cover;
 }
 
+h3 {
+    font-weight: bolder;
+    color: white;
+}
+
 /* START */
 
 #startButton {
@@ -32,17 +37,16 @@ body {
 /* GAME PAGE */
 
 #container {
-    border: 1px solid red;
-    /* background-color: white; */
+    /* border: 1px solid red; */
     width: 80%;
-    height: auto;
+    height: 800px;
     padding-top: 1%;
     padding-bottom: 1%;
     margin:auto;
 }
 
 #titleRow {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 80%;
     height: 150px;
     margin:auto;
@@ -58,52 +62,76 @@ body {
     font-weight: bolder;
 }
 
-#timerRow {
-    border: 1px solid blue;
+#clock {
+    /* border: 1px solid blue; */
     width: 90%;
     height: 100px;
     margin:auto;
     text-align: center;
-    font-size: 30px;
+    font-size: 50px;
     padding-top: 15px;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
-#questionRow {
-    border: 1px solid blue;
+#questionsHere {
+    /* border: 1px solid blue; */
     width: 90%;
-    height: 150px;
+    height: 600px;
+    margin-left: 60px;
     margin:auto;
     text-align: center;
     font-size: 30px;
-    padding-top: 50px;
+    padding-top: 10px;
     font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
-#scoreRow {
-    border: 1px solid blue;
-    width: 90%;
+.resultsReset {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 200px;
+    margin:auto;
+    font-size: 50px;
+    position: relative;
+    top: 100px;
+    background-image: url();
+}
+
+#results {
+    /* border: 1px solid red; */
+    width: 80%;
+    height: 150px;
+    margin:auto;
+    font-size: 50px;
+    background-image: url();
+    text-align: center;
+    padding-top: 50px;
+    position: relative;
+    top: 150px;
+}
+
+#resetButton {
+    height:50px;
+    width: 200px;
+    position: relative;
+    right: 40px;
+    bottom: 10px;
+    font-size: 20px;
+    background-image: url(../images/buttonImage2.jpg);
+    background-size: contain;
+    color: white;
+    font-weight: bolder;
+}
+
+#submit-button {
     height: 100px;
-    margin:auto;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 15px;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    width: 200px;
+    background-image: url(../images/submitButton.jpg);
+    background-size:cover;
+    color:white;
+    font-size: 40px;
 }
 
-#answerRow {
-    border: 1px solid blue;
-    width: 90%;
-    height: 150px;
-    margin:auto;
-    text-align: center;
-    font-size: 30px;
-    padding-top: 50px;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
-}
-
-.answerButton {
-    height: 50px;
-    width: 100px;
-    
+#submit-button:hover {
+    color: red;
+    font-weight: bolder;
 }

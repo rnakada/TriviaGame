@@ -1,139 +1,100 @@
-$(document).ready(function(){
-// start button
+$(document).ready(function () {
 
-function startGame() {
     $("#container").hide();
-    $("#startButton").show(); 
-};
+    $("#startButton").show();
+    $("#results").hide();
 
-$("#startButton").on("click", function() {
-    $("#container").show();
-    $("#startButton").hide();
-    // $("#scoreRow").hide();
-    $("#countDown").text("01:30");
-    questionOne();
-    reset();
-    runTimer();
-});
+    // clock ======================================================
 
-// timer
+    var seconds = 30;
+    var intervalId;
 
-var time = 10;
-var timeHolder;
+    function runTime() {
+        clearInterval(intervalId);
+        intervalId = setInterval(decrement, 1000);
+    }
 
-function runTimer(){
-    clearInterval(timeHolder);
-    timeHolder = setInterval(clock, 1000);
-};
+    function decrement() {
+        seconds--;
+        $("#clock").text(seconds + " seconds left");
+        if (seconds === 0) {
 
-function clock() {
-    // console.log("clock");
-    time--;
+            stop();
+            $("#container").hide();
+            $("#submit-button").hide();
+            submit();
+            $("#clock").hide();
+        }
+    }
 
-    var currentTime = timeConverter(time);
+    function stop() {
+        clearInterval(intervalId);
+    }
 
-    $("#countDown").text(currentTime);
-    if ( time === 0 ) {
+    // start ======================================================
+
+    $("#startButton").on("click", function () {
+        $("#startButton").hide();
+        $("#container").show();
+        answers();
+        runTime();
+    })
+
+    // Trivia ======================================================
+
+    var correct = 0;
+
+    function answers() {
+
+        var q1 = document.forms["questions"]["q1"].value;
+        var q2 = document.forms["questions"]["q2"].value;
+        var q3 = document.forms["questions"]["q3"].value;
+        var q4 = document.forms["questions"]["q4"].value;
+        var q5 = document.forms["questions"]["q5"].value;
+
+        var answers = ["c", "d", "a", "b", "c"]
+
+        if (q1 == answers[0]) {
+            correct++;
+        }
+        if (q2 == answers[1]) {
+            correct++;
+        }
+        if ( q3 == answers[2]){
+        correct++;
+        }
+        if ( q4 == answers[3]){
+        correct++;
+        }
+        if ( q5 == answers[4]){
+        correct++;
+        }
+    }
+
+    //  ======================================================
+
+    $("#submit-button").on("click", submit);
+
+    function submit() {
+        $("#container").hide();
+        $("#submit-button").hide();
+        $("#results").show();
+        answers();
+        results();
         stop();
-        // alert("Times Up!")
-        // startGame();
-    };
-};
-
-function stop() {
-    clearInterval(timeHolder);
-};
-
-function reset() {
-    time = 10;
-    $("#countDown").text("00:10");
-};
-
-function timeConverter(t) {
-    var minutes = Math.floor(t / 60);
-    var seconds = t - (minutes * 60);
-    // console.log(minutes);
-    // console.log(seconds);
-    if (seconds < 10) {
-        seconds = "0" + seconds;
     }
 
-    if (minutes === 0 ) {
-        minutes = "00";
+    // ======================================================
+
+    function results() {
+        $("#results").append("You answered correctly " + correct + " questions out of 5.");
+
     }
+    // ======================================================
 
-    else if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
+    $("#resetButton").on("click", function () {
+        location.reload();
+    })
 
-    return minutes + ":" + seconds;
-};
-
-// Trivia Questions
-
-function questionOne() {
-    
-    var question = "What is the highest pocket pair?";
-    console.log(question);
-    var answers = ["22", "AA", "JJ", "99"];
-    console.log(answers);
-    // var correctAnswer = answers[1];
-    // console.log(correctAnswer);
-    $("#questionRow").text(question);
-    $("#choices").text(answers);
-
-    $("#a").text(answers[3]);
-    $("#b").text(answers[0]);
-    $("#c").text(answers[1]);
-    $("#d").text(answers[2]);
-
-    $("#c").on("click", function(){
-        alert("Correct");
-        $("#wins").text("wins: " + wins++);
-        
-        questionTwo();
-        reset();
-        runTimer();
-    });
-    
-    $("#a, #b, #d").on("click", function(){
-        alert("wrong");
-        $("#losses").text("losses: " + losses++);
-        
-        questionTwo();
-        reset();
-        runTimer();
-    });
-};
-
-function questionTwo() {
-    
-    var question = "What is the Highest Rank Hand?";
-    var answers = ["Flush", "Fullhouse", "Royal Flush", "StraightFlush"];
-
-    $("#questionRow").text(question);
-    $("#a").text(answers[2]);
-    $("#b").text(answers[3]);
-    $("#c").text(answers[0]);
-    $("#d").text(answers[1]);
-
-    $("#a").on("click", function(){
-        alert("Correct");
-        $("#wins").text("wins: " + wins++);
-    });
-    $("#b, #c, #d").on("click", function(){
-        alert("wrong");
-        $("#losses").text("losses: " + losses++);
-    });
-};
-
-// score
-
-var wins = 1;
-var losses = 1;
-
-// $("#wins").text("wins: " + wins);
-// $("#losses").text("losses: " + losses);
-
-startGame();
+    // ======================================================
 });
